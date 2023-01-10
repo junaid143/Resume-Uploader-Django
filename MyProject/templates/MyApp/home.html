@@ -1,0 +1,63 @@
+{% extends 'MyApp/base.html' %}
+{% load static %}
+
+
+{% block css %}
+{% endblock css %}
+
+{% block js %}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $("#id_dob").datepicker();
+        $("#anim").on("change", function () {
+            $("#id_dob").datepicker("option", "showAnim", $(this).val());
+        });
+    });
+</script>
+
+
+
+{% endblock js %}
+
+
+{% block title %}
+<title>Home Page </title>
+{% endblock title %}
+
+
+{% block body %}
+<div class="container">
+    <div class="container text-center shadow mb-3">
+        <h1 class="display-5 text-primary">Resume Form</h1>
+    </div>
+
+    <div class="container mb-3 p-5 shadow">
+        <form action="{% url 'home' %}" method="post" enctype="multipart/form-data" class="p-5">
+            {% csrf_token %}
+
+            {% for fm in form %}
+            <div class="form-group mb-3">
+                <span class="fw-bold">{{fm.label_tag}}</span>
+                {{fm}}
+            </div>
+
+            {% endfor %}
+            <div class="form-group mb-3">
+                <button class="btn btn-primary" type="submit">Submit</button>
+                <button class="btn btn-success" type="reset">Reset</button>
+            </div>
+
+
+        </form>
+
+
+
+    </div>
+
+
+</div>
+{% endblock body %}

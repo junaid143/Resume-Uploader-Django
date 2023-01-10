@@ -1,0 +1,76 @@
+{% extends 'MyApp/base.html' %}
+{% load static %}
+
+
+{% block css %}
+{% endblock css %}
+
+{% block js %}
+{% endblock js %}
+
+
+{% block title %}
+<title>Candidate Info Page </title>
+{% endblock title %}
+
+
+{% block body %}
+<div class="container">
+    <div class="container text-center shadow mb-3">
+        <h1 class="display-5 text-primary">Candidate Information</h1>
+    </div>
+
+    <div class="container mb-3 p-5 shadow">
+        
+        <div class="container border-bottom pb-5">
+            <img src="{{ d.profile_photo.url }}" alt="No Profile Phoro" height="200px"> 
+        </div>
+        <div class="container border-bottom pb-3">
+            <label class="fw-bolder ">First Name :</label> <span>{{d.fname}}</span>
+        </div>
+
+        <div class="container border-bottom pb-3">
+            <label class="fw-bolder ">Last Name :</label> <span>{{d.lname}}</span>
+        </div>
+
+        <div class="container border-bottom pb-3">
+            <label class="fw-bolder ">Date Of Birth :</label> <span>{{d.dob}}</span>
+        </div>
+
+        <div class="container border-bottom pb-3">
+            <label class="fw-bolder ">Gender :</label> <span>{{d.gender}}</span>
+        </div>
+
+        <div class="container border-bottom pb-3">
+            <label class="fw-bolder ">Language :</label> <span>{{d.language}}</span>
+        </div>
+
+        <div class="container border-bottom pb-3">
+            <label class="fw-bolder ">Locality :</label> <span>{{d.locality}}</span>
+        </div>
+
+        <div class="container border-bottom pb-3">
+            <label class="fw-bolder ">City :</label> <span>{{d.city}}</span>
+        </div>
+
+        <div class="container border-bottom pb-3">
+            <label class="fw-bolder ">State :</label> <span>{{d.state}}</span>
+        </div>
+
+        <div class="container border-bottom pb-3">
+            <label class="fw-bolder ">Contact No. :</label> <span>{{d.mobile}}</span>
+        </div>
+
+        <div class="container border-bottom pb-3">
+            <label class="fw-bolder ">Email-ID :</label> <span>{{d.email}}</span>
+        </div>
+
+        <div class="container border-bottom pb-3">
+            <label class="fw-bolder ">Programming Language :</label> <span>{{d.programming_language}}
+            </span>
+        </div>
+        
+
+
+</div>
+{% endblock body %}
